@@ -50,20 +50,20 @@ const App = () => {
   return (
     <div>
       <button onClick={fetchWordFrequency} disabled={isLoading}>
-        {isLoading ? 'Loading...' : 'Load Chart'}
+        {isLoading ? 'Loading...' : 'Submit'}
       </button>
       {showChart && (
         <div>
-          <button onClick={exportToCSV}>Export</button>
           <ResponsiveContainer width="100%" height={400}>
             <BarChart data={wordFrequency}>
               <CartesianGrid strokeDasharray="3 3" />
               <XAxis dataKey="0" angle={-45} textAnchor="end" interval={0} />
               <YAxis />
               <Tooltip />
-              <Bar dataKey="1" fill="#8884d8" />
+              <Bar dataKey="1" fill="#c31432" />
             </BarChart>
           </ResponsiveContainer>
+          <button onClick={exportToCSV}>Export</button>
         </div>
       )}
     </div>
